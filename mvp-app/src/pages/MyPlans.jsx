@@ -6,7 +6,7 @@ import { getMyPlans } from "../api";
 
 const css = `
 .plans-hero {
-  background: linear-gradient(160deg, #fff 0%, #f0eeff 100%);
+  background: var(--cream);
   padding: 70px 56px 48px;
   border-bottom: 1px solid var(--border);
   text-align: center;
@@ -28,10 +28,10 @@ const css = `
 .plan-card {
   background: #fff; border: 1.5px solid var(--border); border-radius: 24px;
   padding: 28px; margin-bottom: 20px;
-  box-shadow: 0 4px 20px rgba(91,95,239,0.05);
+  box-shadow: 0 4px 20px rgba(53,88,114,0.05);
   transition: box-shadow .2s, transform .2s;
 }
-.plan-card:hover { box-shadow: 0 10px 36px rgba(91,95,239,0.12); transform: translateY(-2px); }
+.plan-card:hover { box-shadow: 0 10px 36px rgba(53,88,114,0.12); transform: translateY(-2px); }
 
 .plan-card-header {
   display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
@@ -52,8 +52,8 @@ const css = `
   font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 100px;
   border: 1.5px solid;
 }
-.pb-coral { color: var(--coral); border-color: rgba(255,107,107,0.3); background: rgba(255,107,107,0.07); }
-.pb-indigo { color: var(--indigo); border-color: rgba(91,95,239,0.25); background: rgba(91,95,239,0.07); }
+.pb-coral { color: var(--primary); border-color: rgba(53,88,114,0.3); background: rgba(53,88,114,0.07); }
+.pb-indigo { color: var(--secondary); border-color: rgba(122,170,206,0.25); background: rgba(122,170,206,0.07); }
 .pb-teal { color: #059669; border-color: rgba(5,150,105,0.25); background: rgba(5,150,105,0.07); }
 .pb-amber { color: #D97706; border-color: rgba(217,119,6,0.25); background: rgba(217,119,6,0.07); }
 
@@ -66,13 +66,13 @@ const css = `
 
 .plan-card-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .plan-btn-view {
-  background: linear-gradient(135deg, var(--indigo), var(--coral));
+  background: var(--primary);
   color: #fff; border: none; padding: 10px 20px; border-radius: 100px;
   font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px;
-  cursor: pointer; box-shadow: 0 4px 14px rgba(91,95,239,0.3);
+  cursor: pointer; box-shadow: 0 4px 14px rgba(53,88,114,0.3);
   transition: transform .15s, box-shadow .15s;
 }
-.plan-btn-view:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(91,95,239,0.4); }
+.plan-btn-view:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(53,88,114,0.4); }
 .plan-btn-pdf {
   background: none; border: 1.5px solid var(--border); padding: 10px 20px;
   border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif;
@@ -105,7 +105,7 @@ const css = `
 }
 .road-num {
   width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
-  background: linear-gradient(135deg, var(--indigo), var(--coral));
+  background: var(--primary);
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 800; color: #fff;
 }
@@ -170,7 +170,7 @@ export default function MyPlans() {
   };
 
   const priorityColor = (p) => ({
-    High: "#FF6B6B", Medium: "#5B5FEF", Low: "#00C9A7"
+    High: "#355872", Medium: "#7AAACE", Low: "#B3D5EA"
   })[p] || "#6B7280";
 
   return (

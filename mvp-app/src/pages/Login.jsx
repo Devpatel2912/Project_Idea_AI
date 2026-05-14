@@ -9,19 +9,19 @@ const css = `
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background: linear-gradient(160deg, #fff 0%, #f0eeff 100%);
+  background: var(--cream);
   position: relative;
   overflow: hidden;
 }
 .auth-blob1 {
   position: absolute; width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,107,107,0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(179,213,234,0.25), transparent 70%);
   top: -100px; left: -100px; pointer-events: none;
   animation: float 8s ease-in-out infinite;
 }
 .auth-blob2 {
   position: absolute; width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(91,95,239,0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(53,88,114,0.12), transparent 70%);
   bottom: -80px; right: -80px; pointer-events: none;
   animation: float 10s ease-in-out infinite reverse;
 }
@@ -31,7 +31,7 @@ const css = `
   display: grid; grid-template-columns: 1fr 1fr; gap: 0;
   max-width: 900px; width: 100%; background: #fff;
   border-radius: 24px; overflow: hidden;
-  box-shadow: 0 20px 60px rgba(91,95,239,0.15);
+  box-shadow: 0 20px 60px rgba(53,88,114,0.15);
 }
 
 /* LEFT SIDE - FORM */
@@ -45,7 +45,7 @@ const css = `
 }
 .auth-logo-icon {
   width: 32px; height: 32px; border-radius: 9px;
-  background: linear-gradient(135deg, var(--coral), var(--indigo));
+  background: var(--primary);
   display: flex; align-items: center; justify-content: center;
   font-size: 15px;
 }
@@ -53,7 +53,7 @@ const css = `
   font-size: 12px; color: var(--soft); margin-bottom: 32px;
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
 }
-.auth-back:hover { color: var(--indigo); }
+.auth-back:hover { color: var(--primary); }
 
 .auth-title { font-weight: 800; font-size: 28px; margin-bottom: 8px; letter-spacing: -0.5px; }
 .auth-sub { font-size: 14px; color: var(--soft); margin-bottom: 32px; }
@@ -68,8 +68,8 @@ const css = `
   outline: none; transition: border-color .2s, box-shadow .2s;
 }
 .auth-input:focus {
-  border-color: var(--indigo);
-  box-shadow: 0 0 0 3px rgba(91,95,239,0.12);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(53,88,114,0.12);
 }
 
 .auth-options {
@@ -81,30 +81,29 @@ const css = `
 }
 .auth-checkbox input { cursor: pointer; }
 .auth-link {
-  color: var(--indigo); text-decoration: none; font-weight: 600;
+  color: var(--primary); text-decoration: none; font-weight: 600;
 }
 .auth-link:hover { text-decoration: underline; }
 
 .auth-submit {
-  width: 100%; margin-top: 6px;
-  background: linear-gradient(135deg, var(--indigo), var(--coral));
+  background: var(--primary);
   color: #fff; border: none; padding: 14px;
   border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700; font-size: 15px; cursor: pointer;
-  box-shadow: 0 6px 20px rgba(91,95,239,0.3);
+  box-shadow: 0 6px 20px rgba(53,88,114,0.3);
   transition: transform .15s, box-shadow .15s;
 }
-.auth-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(91,95,239,0.4); }
+.auth-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(53,88,114,0.4); }
 .auth-submit:disabled { opacity: 0.7; cursor: not-allowed; }
 
 .auth-footer {
   text-align: center; margin-top: 24px; font-size: 13px; color: var(--soft);
 }
-.auth-footer a { color: var(--indigo); font-weight: 600; text-decoration: none; }
+.auth-footer a { color: var(--primary); font-weight: 600; text-decoration: none; }
 .auth-footer a:hover { text-decoration: underline; }
 
 .auth-visual-side {
-  background: linear-gradient(135deg, var(--indigo), var(--coral));
+  background: var(--primary);
   padding: 48px 40px; display: flex; flex-direction: column;
   justify-content: center; align-items: center;
   text-align: center; color: #fff; position: relative;
@@ -147,10 +146,10 @@ const css = `
 .stat-label { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
 
 .error-msg {
-  font-size: 13px; color: var(--coral);
-  background: rgba(255,107,107,0.08);
+  font-size: 13px; color: #c0392b;
+  background: rgba(192,57,43,0.08);
   padding: 10px 14px; border-radius: 8px;
-  border: 1px solid rgba(255,107,107,0.2);
+  border: 1px solid rgba(192,57,43,0.2);
   display: flex; align-items: center; gap: 8px;
 }
 

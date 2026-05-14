@@ -6,7 +6,7 @@ import { getUserProfile, updateProfile, changePassword } from "../api";
 
 const css = `
 .dash-hero {
-  background: linear-gradient(160deg, #fff 0%, #f0eeff 100%);
+  background: var(--cream);
   padding: 70px 56px 48px;
   border-bottom: 1px solid var(--border);
 }
@@ -17,7 +17,7 @@ const css = `
 .dash-welcome { flex: 1; }
 .dash-welcome-label {
   font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--indigo); background: rgba(91,95,239,0.1);
+  color: var(--primary); background: rgba(53,88,114,0.1);
   padding: 5px 14px; border-radius: 100px; display: inline-block; margin-bottom: 14px;
 }
 .dash-welcome-title {
@@ -27,7 +27,7 @@ const css = `
 
 .dash-avatar {
   width: 72px; height: 72px; border-radius: 20px;
-  background: linear-gradient(135deg, var(--coral), var(--indigo));
+  background: var(--primary);
   display: flex; align-items: center; justify-content: center;
   font-size: 30px; color: #fff; font-weight: 800; flex-shrink: 0;
 }
@@ -40,18 +40,18 @@ const css = `
 .stat-card {
   background: #fff; border: 1.5px solid var(--border); border-radius: 20px;
   padding: 24px 28px; display: flex; align-items: center; gap: 18px;
-  box-shadow: 0 4px 20px rgba(91,95,239,0.06);
+  box-shadow: 0 4px 20px rgba(53,88,114,0.06);
   transition: transform .2s, box-shadow .2s;
 }
-.stat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(91,95,239,0.12); }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(53,88,114,0.12); }
 .stat-icon {
   width: 52px; height: 52px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center; font-size: 22px;
   flex-shrink: 0;
 }
-.stat-icon-coral { background: rgba(255,107,107,0.12); }
-.stat-icon-indigo { background: rgba(91,95,239,0.1); }
-.stat-icon-teal  { background: rgba(0,201,167,0.1); }
+.stat-icon-coral { background: rgba(53,88,114,0.1); }
+.stat-icon-indigo { background: rgba(122,170,206,0.15); }
+.stat-icon-teal  { background: rgba(179,213,234,0.25); }
 .stat-num { font-weight: 800; font-size: 28px; letter-spacing: -1px; color: var(--text); }
 .stat-lbl { font-size: 13px; color: var(--soft); margin-top: 2px; }
 
@@ -66,7 +66,7 @@ const css = `
 /* Cards */
 .dash-card {
   background: #fff; border: 1.5px solid var(--border); border-radius: 24px;
-  padding: 32px 28px; box-shadow: 0 4px 20px rgba(91,95,239,0.06);
+  padding: 32px 28px; box-shadow: 0 4px 20px rgba(53,88,114,0.06);
 }
 .dash-card-title {
   font-weight: 800; font-size: 18px; margin-bottom: 4px;
@@ -89,7 +89,7 @@ const css = `
   font-size: 13px; font-weight: 600; color: var(--soft); cursor: pointer;
   transition: border-color .2s, color .2s;
 }
-.info-edit-btn:hover { border-color: var(--indigo); color: var(--indigo); }
+.info-edit-btn:hover { border-color: var(--primary); color: var(--primary); }
 
 /* Form fields */
 .dash-fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
@@ -100,17 +100,17 @@ const css = `
   border-radius: 12px; background: var(--bg); color: var(--text);
   outline: none; transition: border-color .2s, box-shadow .2s; width: 100%;
 }
-.dash-input:focus { border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(91,95,239,0.12); }
+.dash-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(53,88,114,0.12); }
 
 .dash-btn-primary {
   width: 100%; padding: 13px;
-  background: linear-gradient(135deg, var(--indigo), var(--coral));
+  background: var(--primary);
   color: #fff; border: none; border-radius: 12px;
   font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px;
-  cursor: pointer; box-shadow: 0 4px 16px rgba(91,95,239,0.3);
+  cursor: pointer; box-shadow: 0 4px 16px rgba(53,88,114,0.3);
   transition: transform .15s, box-shadow .15s; margin-top: 4px;
 }
-.dash-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,95,239,0.4); }
+.dash-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(53,88,114,0.4); }
 .dash-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
 .dash-btn-ghost {
@@ -119,7 +119,7 @@ const css = `
   font-weight: 600; font-size: 13px; color: var(--soft); cursor: pointer;
   transition: border-color .2s, color .2s;
 }
-.dash-btn-ghost:hover { border-color: var(--indigo); color: var(--indigo); }
+.dash-btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
 
 /* Success / error messages */
 .dash-success {
@@ -129,9 +129,9 @@ const css = `
   margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
 }
 .dash-error {
-  font-size: 13px; color: var(--coral);
-  background: rgba(255,107,107,0.08); padding: 10px 14px;
-  border-radius: 10px; border: 1px solid rgba(255,107,107,0.2);
+  font-size: 13px; color: #c0392b;
+  background: rgba(192,57,43,0.08); padding: 10px 14px;
+  border-radius: 10px; border: 1px solid rgba(192,57,43,0.2);
   margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
 }
 
@@ -143,7 +143,7 @@ const css = `
   transition: border-color .2s, background .2s, transform .15s;
   margin-bottom: 10px;
 }
-.quick-link:hover { border-color: var(--indigo); background: rgba(91,95,239,0.04); transform: translateX(3px); }
+.quick-link:hover { border-color: var(--primary); background: rgba(53,88,114,0.04); transform: translateX(3px); }
 .quick-link-left { display: flex; align-items: center; gap: 12px; }
 .quick-link-icon {
   width: 36px; height: 36px; border-radius: 10px;
@@ -155,18 +155,18 @@ const css = `
 
 /* Danger zone */
 .danger-card {
-  background: rgba(255,107,107,0.04); border: 1.5px solid rgba(255,107,107,0.2);
+  background: rgba(192,57,43,0.04); border: 1.5px solid rgba(192,57,43,0.2);
   border-radius: 20px; padding: 24px 28px; margin-top: 8px;
 }
-.danger-title { font-weight: 800; font-size: 15px; color: var(--coral); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.danger-title { font-weight: 800; font-size: 15px; color: #c0392b; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
 .danger-sub { font-size: 13px; color: var(--soft); margin-bottom: 18px; line-height: 1.6; }
 .danger-btn {
-  background: var(--coral); color: #fff; border: none;
+  background: #c0392b; color: #fff; border: none;
   padding: 10px 22px; border-radius: 100px;
   font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px;
   cursor: pointer; transition: transform .15s, box-shadow .15s;
 }
-.danger-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255,107,107,0.4); }
+.danger-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(192,57,43,0.4); }
 
 @media (max-width: 900px) {
   .dash-hero { padding: 60px 24px 40px; }
@@ -501,7 +501,7 @@ export default function Dashboard() {
 
               <Link to="/demo" className="quick-link">
                 <div className="quick-link-left">
-                  <div className="quick-link-icon" style={{ background: "rgba(255,107,107,0.12)" }}>🚀</div>
+                  <div className="quick-link-icon" style={{ background: "rgba(53,88,114,0.1)" }}>🚀</div>
                   <div>
                     <div className="quick-link-title">Generate New MVP</div>
                     <div className="quick-link-sub">Submit a new startup idea</div>
@@ -512,7 +512,7 @@ export default function Dashboard() {
 
               <Link to="/my-plans" className="quick-link">
                 <div className="quick-link-left">
-                  <div className="quick-link-icon" style={{ background: "rgba(91,95,239,0.1)" }}>📋</div>
+                  <div className="quick-link-icon" style={{ background: "rgba(122,170,206,0.15)" }}>📋</div>
                   <div>
                     <div className="quick-link-title">My MVP Plans</div>
                     <div className="quick-link-sub">View and export saved plans</div>
@@ -523,7 +523,7 @@ export default function Dashboard() {
 
               <Link to="/features" className="quick-link">
                 <div className="quick-link-left">
-                  <div className="quick-link-icon" style={{ background: "rgba(0,201,167,0.1)" }}>✨</div>
+                  <div className="quick-link-icon" style={{ background: "rgba(179,213,234,0.25)" }}>✨</div>
                   <div>
                     <div className="quick-link-title">Explore Features</div>
                     <div className="quick-link-sub">See what the platform can do</div>

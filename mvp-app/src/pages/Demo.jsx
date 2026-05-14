@@ -5,7 +5,7 @@ import { generateMVP } from "../api";
 
 const css = `
 .demo-hero {
-  background: linear-gradient(160deg, #fff 0%, #f0eeff 100%);
+  background: var(--cream);
   padding: 70px 56px 56px; text-align: center;
   border-bottom: 1px solid var(--border);
 }
@@ -16,7 +16,7 @@ const css = `
 
 .form-box {
   background: #fff; border: 1.5px solid var(--border); border-radius: 24px; padding: 36px;
-  box-shadow: 0 8px 40px rgba(91,95,239,0.09); position: sticky; top: 88px;
+  box-shadow: 0 8px 40px rgba(53,88,114,0.09); position: sticky; top: 88px;
 }
 .form-box-title { font-weight: 800; font-size: 21px; margin-bottom: 6px; }
 .form-box-sub { font-size: 14px; color: var(--soft); margin-bottom: 28px; }
@@ -29,19 +29,19 @@ const css = `
   transition: border-color .2s, box-shadow .2s; resize: vertical;
 }
 .fi:focus, .fta:focus, .fsel:focus {
-  border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(91,95,239,0.12);
+  border-color: var(--primary); box-shadow: 0 0 0 3px rgba(53,88,114,0.12);
 }
 .fta { min-height: 120px; }
 .fsub {
   width: 100%; margin-top: 8px;
-  background: linear-gradient(135deg, var(--indigo), var(--coral));
+  background: var(--primary);
   color: #fff; border: none; padding: 15px;
   border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700; font-size: 15px; cursor: pointer;
-  box-shadow: 0 6px 20px rgba(91,95,239,0.3);
+  box-shadow: 0 6px 20px rgba(53,88,114,0.3);
   transition: transform .15s, box-shadow .15s;
 }
-.fsub:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(91,95,239,0.4); }
+.fsub:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(53,88,114,0.4); }
 .fsub:disabled { opacity: 0.7; cursor: not-allowed; }
 
 .form-divider {
@@ -74,10 +74,10 @@ const css = `
   width: 32px; height: 32px; border-radius: 10px;
   display: flex; align-items: center; justify-content: center; font-size: 16px;
 }
-.ob1 { background: rgba(255,107,107,0.12); }
-.ob2 { background: rgba(0,201,167,0.12); }
-.ob3 { background: rgba(91,95,239,0.12); }
-.ob4 { background: rgba(255,179,71,0.15); }
+.ob1 { background: rgba(53,88,114,0.1); }
+.ob2 { background: rgba(122,170,206,0.15); }
+.ob3 { background: rgba(53,88,114,0.1); }
+.ob4 { background: rgba(179,213,234,0.3); }
 .out-card-title { font-weight: 800; font-size: 15px; }
 .out-items { display: flex; flex-direction: column; gap: 8px; }
 .out-item {
@@ -101,8 +101,8 @@ const css = `
   overflow-x: auto;
 }
 .schema-comment { color: #5b5fef99; }
-.schema-key { color: var(--sky); }
-.schema-val { color: var(--teal); }
+.schema-key { color: #7AAACE; }
+.schema-val { color: #355872; }
 
 .empty-box {
   border: 2px dashed var(--border); border-radius: 20px; padding: 60px 32px;
@@ -124,10 +124,10 @@ const css = `
 }
 
 .api-error {
-  font-size: 13px; color: var(--coral);
-  background: rgba(255,107,107,0.08);
+  font-size: 13px; color: #c0392b;
+  background: rgba(192,57,43,0.08);
   padding: 10px 14px; border-radius: 8px;
-  border: 1px solid rgba(255,107,107,0.2);
+  border: 1px solid rgba(192,57,43,0.2);
   margin-bottom: 16px;
 }
 `;
@@ -306,7 +306,7 @@ export default function Demo() {
                     <div className="out-items">
                       {planData.features?.map((f, i) => (
                         <div key={i} className="out-item">
-                          <div className="out-check" style={{ background: "#FF6B6B" }}>✓</div>
+                          <div className="out-check" style={{ background: "#355872" }}>✓</div>
                           <div>
                             <strong>{f.name}</strong> — {f.description}
                             <span style={{ marginLeft: 8, fontSize: 11, color: "var(--soft)" }}>({f.priority})</span>
@@ -347,7 +347,7 @@ export default function Demo() {
                     <div className="out-items">
                       {planData.roadmap?.map((r, i) => (
                         <div key={i} className="out-item">
-                          <div className="out-check" style={{ background: "#5B5FEF" }}>✓</div>
+                          <div className="out-check" style={{ background: "#7AAACE" }}>✓</div>
                           <div><strong>{r.phase}:</strong> {r.deliverables?.join(", ")}</div>
                         </div>
                       ))}
@@ -355,7 +355,7 @@ export default function Demo() {
                   </div>
 
                   {/* Download card */}
-                  <div className="out-card show" style={{ transitionDelay: "0.6s", background: "linear-gradient(135deg,var(--coral),var(--indigo))", border: "none" }}>
+                  <div className="out-card show" style={{ transitionDelay: "0.6s", background: "var(--primary)", border: "none" }}>
                     <div style={{ color: "#fff", textAlign: "center", padding: "8px 0" }}>
                       <div style={{ fontSize: 24, marginBottom: 8 }}>📄</div>
                       <div style={{ fontWeight: 800, fontSize: 17, marginBottom: 6 }}>Blueprint ready!</div>

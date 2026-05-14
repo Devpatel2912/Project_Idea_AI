@@ -13,13 +13,13 @@ const css = `
 }
 .blob1 {
   position: absolute; width: 560px; height: 560px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,107,107,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(179,213,234,0.3), transparent 70%);
   top: -80px; left: -80px; pointer-events: none;
   animation: float 8s ease-in-out infinite;
 }
 .blob2 {
   position: absolute; width: 480px; height: 480px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(91,95,239,0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(53,88,114,0.12), transparent 70%);
   bottom: -60px; right: 0; pointer-events: none;
   animation: float 10s ease-in-out infinite reverse;
 }
@@ -28,12 +28,12 @@ const css = `
   display: inline-flex; align-items: center; gap: 8px;
   background: #fff; border: 1.5px solid var(--border);
   padding: 6px 16px; border-radius: 100px;
-  font-size: 13px; font-weight: 600; color: var(--indigo);
-  margin-bottom: 28px; box-shadow: 0 2px 10px rgba(91,95,239,0.12);
+  font-size: 13px; font-weight: 600; color: var(--primary);
+  margin-bottom: 28px; box-shadow: 0 2px 10px rgba(53,88,114,0.12);
 }
 .pill-dot {
   width: 7px; height: 7px; border-radius: 50%;
-  background: var(--teal); animation: pulse 2s infinite;
+  background: var(--secondary); animation: pulse 2s infinite;
 }
 .hero-title {
   font-size: clamp(40px, 4.5vw, 66px);
@@ -43,9 +43,7 @@ const css = `
 .hero-title em {
   font-family: 'Instrument Serif', serif;
   font-style: italic; font-weight: 400;
-  background: linear-gradient(135deg, var(--coral), var(--indigo));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--secondary);
 }
 .hero-sub {
   font-size: 17px; color: var(--soft); line-height: 1.75;
@@ -64,9 +62,9 @@ const css = `
   font-size: 15px;
 }
 .av:first-child { margin-left: 0; }
-.av1 { background: linear-gradient(135deg, var(--amber), var(--coral)); }
-.av2 { background: linear-gradient(135deg, var(--teal), var(--sky)); }
-.av3 { background: linear-gradient(135deg, var(--pink), var(--indigo)); }
+.av1 { background: var(--secondary); }
+.av2 { background: var(--primary); }
+.av3 { background: var(--light); }
 .social-text { font-size: 13px; color: var(--soft); }
 .social-text strong { color: var(--text); }
 
@@ -76,29 +74,29 @@ const css = `
 .main-card {
   position: absolute; top: 0; left: 0; width: 100%;
   background: #fff; border-radius: 24px; padding: 28px;
-  box-shadow: 0 20px 60px rgba(91,95,239,0.15), 0 4px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 20px 60px rgba(53,88,114,0.15), 0 4px 16px rgba(0,0,0,0.06);
   z-index: 3;
 }
 .card-back1 {
   position: absolute; top: 14px; left: -16px;
   width: 100%; height: 100%;
-  background: linear-gradient(135deg, #FFE8E8, #FFF0F0);
+  background: var(--light);
   border-radius: 24px; z-index: 1; transform: rotate(-4deg);
 }
 .card-back2 {
   position: absolute; top: 10px; right: -16px;
   width: 100%; height: 100%;
-  background: linear-gradient(135deg, #E8EAFF, #F0F1FF);
+  background: #ddd8ce;
   border-radius: 24px; z-index: 2; transform: rotate(3deg);
 }
 .card-header {
   display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;
 }
-.card-logo { font-weight: 800; font-size: 15px; color: var(--indigo); }
+.card-logo { font-weight: 800; font-size: 15px; color: var(--primary); }
 .card-status {
   display: flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 700; color: var(--teal);
-  background: rgba(0,201,167,0.1); padding: 4px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 700; color: var(--secondary);
+  background: rgba(122,170,206,0.12); padding: 4px 10px; border-radius: 100px;
 }
 .card-idea-box {
   background: var(--bg); border-radius: 12px; padding: 14px;
@@ -117,19 +115,19 @@ const css = `
   display: flex; align-items: center; justify-content: center;
   font-size: 10px; color: #fff;
 }
-.bg-coral  { background: var(--coral); }
-.bg-teal   { background: var(--teal); }
-.bg-indigo { background: var(--indigo); }
-.bg-amber  { background: var(--amber); }
-.bg-sky    { background: var(--sky); }
+.bg-coral  { background: var(--primary); }
+.bg-teal   { background: var(--secondary); }
+.bg-indigo { background: var(--primary); }
+.bg-amber  { background: var(--secondary); }
+.bg-sky    { background: var(--light); }
 .stack-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 .stag {
   font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 100px; border: 1.5px solid;
 }
-.t-coral  { color: var(--coral);  border-color: rgba(255,107,107,.3); background: rgba(255,107,107,.07); }
-.t-teal   { color: var(--teal);   border-color: rgba(0,201,167,.3);   background: rgba(0,201,167,.07); }
-.t-indigo { color: var(--indigo); border-color: rgba(91,95,239,.3);   background: rgba(91,95,239,.07); }
-.t-amber  { color: #c47c00;       border-color: rgba(255,179,71,.4);  background: rgba(255,179,71,.1); }
+.t-coral  { color: var(--primary);   border-color: rgba(53,88,114,.3);  background: rgba(53,88,114,.07); }
+.t-teal   { color: var(--secondary); border-color: rgba(122,170,206,.3); background: rgba(122,170,206,.07); }
+.t-indigo { color: var(--primary);   border-color: rgba(53,88,114,.3);  background: rgba(53,88,114,.07); }
+.t-amber  { color: var(--secondary); border-color: rgba(122,170,206,.4); background: rgba(122,170,206,.1); }
 
 .badge-float {
   position: absolute; background: #fff; border-radius: 14px; padding: 10px 14px;
@@ -143,7 +141,7 @@ const css = `
 
 /* stats bar */
 .stats-bar {
-  background: linear-gradient(135deg, var(--indigo), var(--coral));
+  background: var(--primary);
   padding: 52px 56px; display: flex; justify-content: center; gap: 0;
 }
 .stat-block {
@@ -164,12 +162,12 @@ const css = `
   background: #fff; border: 1.5px solid var(--border); border-radius: 20px; padding: 32px;
   transition: transform .2s, box-shadow .2s; cursor: default;
 }
-.teaser-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(91,95,239,0.1); }
+.teaser-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(53,88,114,0.1); }
 .teaser-icon { font-size: 32px; margin-bottom: 16px; }
 .teaser-title { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
 .teaser-desc { font-size: 14px; color: var(--soft); line-height: 1.65; margin-bottom: 18px; }
 .teaser-link {
-  font-size: 13px; font-weight: 700; color: var(--indigo);
+  font-size: 13px; font-weight: 700; color: var(--primary);
   text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
 }
 .teaser-link:hover { text-decoration: underline; }
@@ -219,7 +217,7 @@ export default function Home() {
               <div className="main-card">
                 <div className="card-header">
                   <div className="card-logo">🚀 IdeaToMVP</div>
-                  <div className="card-status"><span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--teal)", display: "inline-block" }} />Generated</div>
+                  <div className="card-status"><span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--secondary)", display: "inline-block" }} />Generated</div>
                 </div>
                 <div className="card-idea-box">
                   <div className="card-idea-label">Your Idea</div>
@@ -237,9 +235,9 @@ export default function Home() {
                   <span className="stag t-amber">Gemini AI</span>
                 </div>
               </div>
-              <div className="badge-float b1"><span>⚡</span><span style={{ color: "var(--teal)", fontWeight: 700 }}>Ready in 28s</span></div>
-              <div className="badge-float b2"><span>📄</span><span style={{ color: "var(--indigo)", fontWeight: 700 }}>PDF Export</span></div>
-              <div className="badge-float b3"><span>🎯</span><span style={{ color: "var(--coral)", fontWeight: 700 }}>96% Accuracy</span></div>
+              <div className="badge-float b1"><span>⚡</span><span style={{ color: "var(--secondary)", fontWeight: 700 }}>Ready in 28s</span></div>
+              <div className="badge-float b2"><span>📄</span><span style={{ color: "var(--primary)", fontWeight: 700 }}>PDF Export</span></div>
+              <div className="badge-float b3"><span>🎯</span><span style={{ color: "var(--primary)", fontWeight: 700 }}>96% Accuracy</span></div>
             </div>
           </div>
         </section>

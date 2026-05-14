@@ -37,9 +37,11 @@ export default function Navbar() {
           )}
           <NavLink
             to="/dashboard"
-            style={{ fontSize: "13px", fontWeight: "600", color: "var(--indigo)",
+            style={{
+              fontSize: "13px", fontWeight: "600", color: "var(--indigo)",
               textDecoration: "none", padding: "8px 14px", borderRadius: "8px",
-              background: "rgba(91,95,239,0.07)" }}
+              background: "rgba(91,95,239,0.07)"
+            }}
           >
             Dashboard
           </NavLink>
